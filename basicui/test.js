@@ -9,8 +9,24 @@ function abc(callback){
     }
    , 5000)
 }
-
 abc(function(result){console.log(result)})
+
+//  -- Promises
+function abc(){
+	console.log('abc')
+	return new Promise(function(resolve, reject){
+		setTimeout(function(){
+          console.log('Doing something asynchronously') 
+          console.log('after some time')
+          resolve("SUCCESS")
+        }
+   		, 5000)	
+    })
+}
+abc().then(function(result) { console.log(result)} );
+
+
+
 
 
 // Scopes

@@ -3,7 +3,22 @@
     <title>Some title</title>
 </head>
 <body>
-    <h2>Some content</h2>
+    <h2 id="heading">Some content</h2>
     <h2>details of the content -change something</h2>
+
+    <button onclick="reverse()">Reverse Heading</button>
+
+    <script>
+
+        function reverse(){
+            console.log('something')
+            var content = document.getElementById('heading').innerHTML
+            console.log(content)
+            var revString = content.split('').reverse().join('')
+            document.getElementById('heading').innerHTML = revString
+        }
+    
+    </script>
+
 </body>
 </html>
