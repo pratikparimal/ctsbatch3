@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Angular Demo</title>
+</head>
+<body ng-app="myApp">
+    <!-- View -->
+    <div ng-controller="AppCtrl">
+           {{text}} 
+           <input type="text" ng-model="text"/>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+       var app =  angular.module('myApp', []);
+
+    //    Controller Part, $scope acts like a model
+       app.controller('AppCtrl', function($scope){
+            $scope.text = "Some text"
+       }) 
+
+    </script>
+
+</body>
+</html>

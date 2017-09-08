@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Jquery Demo</title>
+</head>
+<body>
+    <div>
+        <p id="content">Some content here</p>
+        <button onclick="reverse()">Reverse String</button>
+
+        <input type="text" id="message"/>
+        <div id="showmessage"><div>
+
+          
+         <button id="ajax">Ajax demo</button>   
+
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <script>
+
+$('#ajax').bind('click', function(){
+    console.log('ajax call');
+    $.ajax('http://localhost:8080/test.json')
+    .then(function(res){
+        console.log(res);
+        return "1"
+    })
+    .then(function(data){
+        console.log(data);
+    })
+})
+
+        $('#message').bind('keyup', function(){
+            var message = $('#message').val()
+            $('#showmessage').html(message);
+           
+        })
+        function reverse(){
+            // var content = document.getElementById('content').innerHTML;
+            // var revString = $('#content').html().split('').reverse().join('');
+            // var revString = content
+            // document.getElementById('content').innerHTML = revString
+            $('#content').html($('#content').html().split('').reverse().join(''))
+        }
+    </script>   
+</body>
+</html>

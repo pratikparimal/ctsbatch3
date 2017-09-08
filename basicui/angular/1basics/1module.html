@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Angular Demo</title>
+</head>
+<body ng-app="myApp">
+    <div>
+           {{message}} 
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+       var app =  angular.module('myApp', []);
+
+       app.run(function($rootScope){
+           $rootScope.message = "Some Random text";
+       }) 
+
+    </script>
+
+</body>
+</html>

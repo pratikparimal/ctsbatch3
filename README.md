@@ -28,9 +28,20 @@
             Document as an object (tree like structure)
             Write to DOM, page re-render
         - JQuery
+            Library of reusable JavaScript functions
+            Make our JS code smaller in size
+            Majorly about DOM manipulation (read & write to DOM)
+        - AngularJS
+            Data binding feature - Not doing a great deal of DOM manipulation, framework takes of it.
+            Your code is really short and crisp, dont write much JS
+            Opinionated framework, takes care of most UI concerns
     
     Javascript vs JQuery vs AngularJS
 
+
+
     AngularJS
         - Basics
+            Module: angular.module
+            MVC: module.controller('')
         - Advanced Stuff
