@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Custom Tags</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body ng-app="myApp">
+    <div>
+        <cg-badge caption="Votes" count="34"></cg-badge>
+        <cg-badge caption="Inbox" count="1"></cg-badge>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+    
+        app.directive('cgBadge', function(){
+            return {
+                templateUrl: 'partial/badge.html',
+                // replace: ,
+                // restrict: 
+                link: function(scope, element, attrs){
+
+                    console.log(attrs);
+                    scope.count = attrs.count
+                    scope.caption = attrs.caption
+                    element.bind('mouseenter', function(){
+                        console.log('mouseenter event')
+                        scope.count++
+                        scope.$apply()
+                    })
+                    element.bind('mouseleave', function(){
+                        console.log('mouseleave event')
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

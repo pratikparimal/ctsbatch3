@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Custom Tags</title>
+</head>
+<body ng-app="myApp">
+    <div>
+        <gl-link></gl-link>
+        <notepad></notepad><panel></panel>
+        <gl-link></gl-link>
+        <gl-link></gl-link> 
+        <div gl-link></div>
+        <input type="text" calender>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+    
+        app.directive('glLink', function(){
+            return {
+                template: '<a href="http://www.google.com">Google Link</a>'
+            }
+        })
+    </script>
+</body>
+</html>

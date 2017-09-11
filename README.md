@@ -49,4 +49,8 @@
             Filters: Filtering and Formatting Data
                 - formatters: uppercase, lowercase, date, number, currency, orderBy
                 - filter: limitTo, filter
+                - custom filter: capitalize
             Ng-Repeat: way to iterate over in markup
+            Directives: Custom tags, tags not used in HTML
+                - ng-app, ng-controller, ng-repeat (Core tags from Angular library)
+                - Cusom tags
