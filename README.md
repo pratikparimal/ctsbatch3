@@ -46,3 +46,7 @@
             MVC: module.controller('')
         - Advanced Stuff
             Factory: A way to share data
+            Filters: Filtering and Formatting Data
+                - formatters: uppercase, lowercase, date, number, currency, orderBy
+                - filter: limitTo, filter
+            Ng-Repeat: way to iterate over in markup

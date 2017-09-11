@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Filters Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css">
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="AppCtrl">
+        <input type="text" ng-model="search.role" placeholder="Search by Role" />
+        <input type="text" ng-model="search.name" placeholder="Search by Name" />
+        <input type="text" ng-model="search.$" placeholder="Search All" />
+        <table>
+            <tr>
+                <th><a href="" ng-click="sort('name')">Name</a> </th>
+                <th><a href="" ng-click="sort('role')">Role</a> </th>
+                <th><a href="" ng-click="sort('status')">Status</a> </th>
+            </tr>
+            <tr ng-repeat="employee in employees | filter:search | orderBy: sortColumn">
+                <td>{{employee.name}}</td>
+                <td>{{employee.role}}</td>
+                <td>{{employee.status}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('AppCtrl', function ($scope) {
+
+            $scope.sort = function(sortColumn){
+                console.log('Sorting by ', sortColumn)
+                $scope.sortColumn = sortColumn
+            }
+
+            $scope.employees = [
+                { name: 'Ravi', role: 'Developer', status: 'A' },
+                { name: 'Priya', role: 'Finance', status: 'A' },
+                { name: 'Sonia', role: 'Developer', status: 'I' },
+                { name: 'Anuj', role: 'HR', status: 'A' },
+                { name: 'Rahul', role: 'Developer', status: 'A' }
+            ]
+
+        })
+    </script>
+</body>
+
+</html>
