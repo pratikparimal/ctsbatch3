@@ -45,3 +45,4 @@
             Module: angular.module
             MVC: module.controller('')
         - Advanced Stuff
+            Factory: A way to share data
