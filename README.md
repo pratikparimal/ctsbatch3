@@ -54,3 +54,9 @@
             Directives: Custom tags, tags not used in HTML
                 - ng-app, ng-controller, ng-repeat (Core tags from Angular library)
                 - Cusom tags
+                - link(scope, element,attrs)
+                    - element: JQLite wrapped element
+                    - scope vs $scope(Controller DI)
+                    - attrs    
+                - isolation with scopes
+            Ajax with Angular, Consume information from server on client side

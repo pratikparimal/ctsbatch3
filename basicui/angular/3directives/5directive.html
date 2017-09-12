@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Custom Tags</title>
+    <style>
+    .redborder {
+        border: 3px solid red;
+    }
+    </style>
+</head>
+<body ng-app="myApp">
+        
+    <div ng-controller="AppCtrl">
+            <gl-panel text="Panel1"></gl-panel>
+            <gl-panel text="Panel2"></gl-panel>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('AppCtrl', function($scope){
+            
+        })
+        app.directive('glPanel', function(){
+            return {
+                template: '<div>{{title}}</div>',
+                replace: true,
+                scope: {
+                    title: '@text'
+                },
+                link: function(scope,element,attrs){
+                    // scope.title = attrs.text;
+                    console.log(scope);
+                    element.addClass('redborder')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

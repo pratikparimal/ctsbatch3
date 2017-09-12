@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Ajax Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body ng-app="myApp">
+
+
+
+    <div ng-controller="AppCtrl">
+        <input type="text" ng-model="search.role" placeholder="Search by Role" />
+        <input type="text" ng-model="search.name" placeholder="Search by Name" />
+        <input type="text" ng-model="search.$" placeholder="Search All" />
+<!--         <table>
+            <tr>
+                <th><a href="" ng-click="sort('name')">Name</a> </th>
+                <th><a href="" ng-click="sort('role')">Role</a> </th>
+                <th><a href="" ng-click="sort('status')">Status</a> </th>
+            </tr>
+            <tr ng-repeat="employee in employees | filter:search | orderBy: sortColumn">
+                <td>{{employee.name}}</td>
+                <td>{{employee.role}}</td>
+                <td>{{employee.status}}</td>
+            </tr>
+        </table> -->
+        <cg-panel name="{{employee.name}}" role="{{employee.role}}" status="{{employee.status}}" ng-repeat="employee in employees | filter:search | orderBy: sortColumn"></cg-panel>
+            
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('AppCtrl', function ($scope, $http) {
+            console.log($scope)
+
+            $scope.sort = function (sortColumn) {
+                console.log('Sorting by ', sortColumn)
+                $scope.sortColumn = sortColumn
+            }
+
+            $http({
+                url: 'http://localhost:8080/angular/2adv/dummy.json',
+                method: 'GET'
+            }).then(function (res) {
+                console.log(res);
+                $scope.employees = res.data
+            })
+
+
+        })
+
+        app.directive('cgPanel', function(){
+            return {
+                retrict: 'E',
+                templateUrl: 'partial/panel.html',
+                // scope: {},
+                link: function(scope, element, attrs){
+                    console.log(scope);
+                    scope.name = attrs.name
+                    scope.role = attrs.role
+                    scope.status = attrs.status
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

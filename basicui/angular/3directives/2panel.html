@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Usage of third-party directives</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="AppCtrl">
+
+            <h4>Default</h4>
+            <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+            {{rate}}
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+
+    <script>
+        var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+        app.controller('AppCtrl', function ($scope) {
+            $scope.rate = 1;
+            $scope.max = 10;
+            $scope.isReadonly = false;
+
+            $scope.hoveringOver = function (value) {
+                $scope.overStar = value;
+                $scope.percent = 100 * (value / $scope.max);
+            };
+
+            $scope.ratingStates = [
+                { stateOn: 'glyphicon-ok-sign', stateOff: 'glyphicon-ok-circle' },
+                { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' },
+                { stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle' },
+                { stateOn: 'glyphicon-heart' },
+                { stateOff: 'glyphicon-off' }
+            ];
+        });
+    </script>
+</body>
+
+</html>

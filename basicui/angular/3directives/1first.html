@@ -1,0 +1,47 @@
+<html>
+        <head>
+            <title>Custom Tags</title>
+
+            <style>
+                .redborder {
+                    border: 3px solid red
+                }
+            </style>
+        </head>
+        <body ng-app="myApp">
+            <div ng-controller="AppCtrl">
+                <gl-panel text="First Panel--"></gl-panel>
+                <gl-panel text="Second Panel--"></gl-panel>
+                <gl-panel text="Third Panel--"></gl-panel>
+
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+            <script>
+                var app = angular.module('myApp', []);
+
+                app.controller('AppCtrl', function($scope){
+                    console.log($scope)    
+                })
+            
+                app.directive('glPanel', function(){
+                    return {
+                        template: '<div>{{text}}</div>',
+                        replace: true,
+                        scope: {},
+                        link: function(scope, element, attrs){
+                            console.log(scope);
+                            console.log(attrs);
+                            scope.text = attrs.text
+                            console.log('Link Function --');             
+                            element.bind('mouseenter', function(){
+                                element.addClass('redborder')
+                            })
+                            element.bind('mouseleave', function(){
+                                element.removeClass('redborder')
+                            })
+                        }
+                    }
+                })
+            </script>
+        </body>
+        </html>
