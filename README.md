@@ -59,4 +59,14 @@
                     - scope vs $scope(Controller DI)
                     - attrs    
                 - isolation with scopes
+                - make use of existing third-party directives
             Ajax with Angular, Consume information from server on client side
+            Ticket Management System
+                - View Tickets screen
+                    - Display tickets as directives
+                    - Add search and sort facility
+                    - Use severity to color up directive.
+                        5: red
+                        3: yellow
+                        1: light greeen
+                - Add Tickets screen (Server side code, Single Page)

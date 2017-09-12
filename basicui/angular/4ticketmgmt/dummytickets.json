@@ -1,0 +1,6 @@
+[
+    {"summary": "Internet not working!!", "severity": 3, "description": "Interet not working boz of bla bla bla!!"},
+    {"summary": "Monitor not working!!", "severity": 2, "description": "Interet not working boz of bla bla bla!!"},
+    {"summary": "Phone faulty!!", "severity": 2, "description": "Interet not working boz of bla bla bla!!"},
+    {"summary": "System not starting!", "severity": 5, "description": "Interet not working boz of bla bla bla!!"}
+]

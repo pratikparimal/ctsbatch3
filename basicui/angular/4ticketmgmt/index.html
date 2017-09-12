@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>Ticket Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+</head>
+
+<body ng-app="ticketsApp">
+    <div class="container">
+        <div class="row" ng-controller="ViewCtrl">
+            <cg-ticket ng-repeat="ticket in tickets" summary="{{ticket.summary}}" description="{{ticket.description}}"></cg-ticket>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+        var app = angular.module('ticketsApp', [])
+
+        app.controller('ViewCtrl', function ($scope, $http) {
+            $http({
+                url: 'dummytickets.json',
+                method: 'GET'
+            }).then(function (res) {
+                $scope.tickets = res.data
+            })
+        })
+
+        app.directive('cgTicket', function () {
+            return {
+                restrict: 'E',
+                templateUrl: 'partial/ticket.html',
+                scope: {
+                    summary: '@summary',
+                    description: '@description',
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
