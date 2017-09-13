@@ -39,7 +39,8 @@
 
         app.controller('ViewCtrl', function ($scope, $http) {
             $http({
-                url: 'dummytickets.json',
+                // url: 'dummytickets.json',
+                url: 'http://localhost:3000/tickets',
                 method: 'GET'
             }).then(function (res) {
                 $scope.tickets = res.data
@@ -49,7 +50,7 @@
             $scope.addTicket = function () {
                 console.log($scope.ticket)
                 $http({
-                    url: 'someurl',
+                    url: 'http://localhost:3000/tickets',
                     method: 'POST',
                     data: $scope.ticket
                 }).then(function (res) {

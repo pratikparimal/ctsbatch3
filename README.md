@@ -72,3 +72,8 @@
                 - Add Tickets screen (Server side code, Single Page)
                 - Single Page Application
     NodeJS
+        - Node JS is a library of JavaScript functions that run on Chrome's V8 browser
+        - Core libraries ('fs', 'events')
+        - Asynch mode (youtube link)
+        - NPM is library repository for more libraries other than core.
+        - Create a package.json (npm init)
