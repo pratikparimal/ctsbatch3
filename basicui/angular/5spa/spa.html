@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>SPA</title>
+    <link rel="stylesheet" href="https://getbootstrap.com/dist/css/bootstrap.min.css">
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div>
+        <ng-view></ng-view>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+    
+    
+    <script>
+        var app = angular.module('myApp', ['ngRoute'])
+
+        app.config(function($routeProvider){
+            $routeProvider
+            .when('/', {
+                templateUrl: 'partial/login.html',
+                controller: 'AppCtrl'
+            })
+            .when('/profile', {
+                templateUrl: 'partial/landing.html',
+                controller: 'AppCtrl'
+            }).otherwise({
+                // template:'<h2>Error Page</h2>'
+                redirectTo: '/'
+            })
+        })
+
+        app.controller('AppCtrl', function($scope, $http, $location){
+            $scope.today = new Date();
+
+            $scope.authenticate = function(){
+                $http({
+                    url: 'dummy.json',
+                    method: 'GET'
+                }).then(res => {
+                    console.log(res.data);
+                    if(res.data.auth){
+                        // Navigate the user to profile page
+                        $location.path('/profile')
+                    }
+                    else{
+                        // Show up error message
+                        $scope.errorMessage = "Invalid UserName/Password!!"
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>
