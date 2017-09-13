@@ -1,6 +1,6 @@
 # ctsbatch3
 
-    Day 1
+    # Day 1
 
     To get http-server working on your machines
     1. NodeJS installation
