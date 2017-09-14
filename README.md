@@ -92,6 +92,7 @@
 
         - Modules in NodeJS: relies third party library CommonJS (brings in the module system to ES5)
         - Server side template in NodeJS
+        
         - MongoDB to persist
         - MEAN: MongoDB, Express, AngularJS, NodeJS
         - NodeJS application    
