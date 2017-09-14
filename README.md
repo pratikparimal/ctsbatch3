@@ -88,3 +88,11 @@
         - NPM is library repository for more libraries other than core.
         - Create a package.json (npm init)
         - Browse to directory -> nodejsdemo -> npm install -> node server.js
+        - Integrate Angular into NodeJS
+
+        - Modules in NodeJS: relies third party library CommonJS (brings in the module system to ES5)
+        - Server side template in NodeJS
+        - MongoDB to persist
+        - MEAN: MongoDB, Express, AngularJS, NodeJS
+        - NodeJS application    
+        
