@@ -13,6 +13,10 @@ var server = http.createServer(function(req,res){
     
 });
 
-server.listen(3000, function(){
+// server.listen(3333)
+
+server.listen(3000, function(err){
+    console.log(err);
+    // console.log(success
     console.log('Listening on port 3000')
 })

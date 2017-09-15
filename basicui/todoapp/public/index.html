@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>Todos App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="TodoCtrl">
+
+        <div class="form-group">
+ 
+            <input type="text" ng-model="item.text" class="form-control" placeholder="Add your Todo" />
+            <button type="button" ng-click="addTodo()" class="btn btn-primary">Add Todo</button>
+
+            <hr/>
+
+            <ul class="list-group" ui-sortable ng-model="todos">
+                <li ng-repeat="todo in todos" class="list-group-item"><span>{{todo.text}}</span><span ng-click="removeTodo($index)" class="glyphicon glyphicon-remove"></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="dist/sortable.js"></script>
+
+    <script>
+        var app = angular.module('myApp', ['ui.sortable'])
+
+        app.controller('TodoCtrl', function ($scope) {
+            $scope.todos = [{ text: 'A' }, { text: 'B' }]
+            $scope.addTodo = function () {
+                console.log($scope.todo)
+                $scope.todos.push($scope.item);
+
+                //
+                $scope.item = ''
+            }
+            $scope.removeTodo = function (index) {
+                console.log(index)
+                $scope.todos.splice(index, 1);
+            }
+
+            $scope.$watch('item.text', function(newValue, oldValue) {
+                console.log(newValue);
+                console.log(oldValue);
+                console.log('todos changed....')
+            });
+        })
+    </script>
+</body>
+
+</html>
