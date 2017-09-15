@@ -11,14 +11,18 @@
 
         <div class="form-group">
  
-            <input type="text" ng-model="item.text" class="form-control" placeholder="Add your Todo" />
+            <input type="text" ng-model="text" class="form-control" placeholder="Add your Todo" />
             <button type="button" ng-click="addTodo()" class="btn btn-primary">Add Todo</button>
 
             <hr/>
 
             <ul class="list-group" ui-sortable ng-model="todos">
-                <li ng-repeat="todo in todos" class="list-group-item"><span>{{todo.text}}</span><span ng-click="removeTodo($index)" class="glyphicon glyphicon-remove"></span></li>
+                <li ng-repeat="todo in todos track by $index" class="list-group-item"><span>{{todo.text}}</span><span ng-click="removeTodo($index)" class="glyphicon glyphicon-remove"></span></li>
             </ul>
+            <hr/>
+            <button type="button" ng-click="sync()" class="btn btn-primary">Sych with the Server</button>
+            <button type="button" ng-click="load()" class="btn btn-primary">Load from the Server</button>
+            
         </div>
     </div>
 
@@ -31,24 +35,31 @@
         var app = angular.module('myApp', ['ui.sortable'])
 
         app.controller('TodoCtrl', function ($scope) {
-            $scope.todos = [{ text: 'A' }, { text: 'B' }]
+            // $scope.todos = [{ text: 'A' }, { text: 'B' }]
+            var todosFromLS = localStorage.getItem('ls.todos')
+            var todos = JSON.parse(todosFromLS);
+            console.log(todos);
+            $scope.todos =  todos || []
+            console.log('$scope.todos: ', $scope.todos)
             $scope.addTodo = function () {
                 console.log($scope.todo)
-                $scope.todos.push($scope.item);
-
-                //
-                $scope.item = ''
+                $scope.todos.push({text: $scope.text});
+                $scope.text = ''
             }
             $scope.removeTodo = function (index) {
                 console.log(index)
                 $scope.todos.splice(index, 1);
             }
 
-            $scope.$watch('item.text', function(newValue, oldValue) {
+            $scope.$watch('todos', function(newValue, oldValue) {
                 console.log(newValue);
                 console.log(oldValue);
-                console.log('todos changed....')
-            });
+                if(newValue !=oldValue){
+                    console.log('todos changed....')
+                    localStorage.setItem('ls.todos', JSON.stringify(newValue))
+                }
+               
+            }, true);
         })
     </script>
 </body>
