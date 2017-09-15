@@ -90,11 +90,34 @@
         - Browse to directory -> nodejsdemo -> npm install -> node server.js
         - Integrate Angular into NodeJS
 
+    Day 7
+
         - Modules in NodeJS: relies third party library CommonJS (brings in the module system to ES5)
         - Server side template in NodeJS
         - MongoDB to persist
         - NodeJS and MongoDB integration
         - NodeJS and Angular integration
+
+    Day 8    
+       
         - MEAN: MongoDB, Express, AngularJS, NodeJS (Single Stack developement)
-        - NodeJS application    
+        - NodeJS application
+        - $watch: explicit way to watch for model($scope) changes
+        - localstorage: on the client itself, persist data (5MB), duration -> infinite
+        - sessionstorage: close your tab, clear the data
+        - $http: to communicate to the server
+
+    Practice: 
+        - Poll Application
+        - Ticket Mgmnt app, add some features - Modify/Update ticket, delete ticket
+        - Todo App: add server side persistence
+        - SST (Jade, Pug, EJS)  
+        - Pagination  
+
+    Refs: MongoDB Commands : https://docs.mongodb.com/manual/reference/mongo-shell/
+
+
+        - Factory vs Service vs Provider($routeProvider)
+        - AnglarJS leftover (adv directive)
+        - Java based developement (Spring & Hibernate)   
         
