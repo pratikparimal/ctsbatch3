@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>DI Demo</title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="AppCtrl">
+            {{arr}}
+            {{arr[1].commonFn()}}
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.config(function(HelloProvider){
+            HelloProvider.setName('World!!')
+        })
+
+        // Hold data
+        app.factory('HelloFactory', function(){
+            return {
+                message: 'Hello World from Factory'
+            }
+        })
+
+        // Methods
+        app.service('HelloService', function(){
+            this.message = "Hello World from Service"
+            this.commonFn = function(){
+                console.log('Common functionality')
+            }
+        })
+
+        //Providers
+
+         //provider style, full blown, configurable version
+         app.provider('Hello', function() {
+            // In the provider function, you cannot inject any
+            // service or factory. This can only be done at the
+            // "$get" method.
+
+            this.name = 'Default';
+
+            this.$get = function() {
+                var name = this.name;
+                return {
+                    sayHello: function() {
+                        return "Hello, " + name + "!"
+                    }
+                }
+            };
+
+            this.setName = function(name) {
+                this.name = name;
+            };
+        });
+
+
+        app.controller('AppCtrl', function($scope, HelloFactory, HelloService, Hello){
+            $scope.x = "Some value"
+            $scope.arr = [HelloFactory, HelloService, Hello.sayHello()]
+        })
+    </script>
+</body>
+</html>

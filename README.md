@@ -116,8 +116,14 @@
 
     Refs: MongoDB Commands : https://docs.mongodb.com/manual/reference/mongo-shell/
 
+    Day 9
 
         - Factory vs Service vs Provider($routeProvider)
+            Subtle difference b/w Factories and Services
+            Factories are more for data
+            Service are more for service functions
+            Providers, also gives a single object, but it is configurable at module configuration level. You can change it one time.
+        - Form validations
         - AnglarJS leftover (adv directive)
         - Java based developement (Spring & Hibernate)   
         

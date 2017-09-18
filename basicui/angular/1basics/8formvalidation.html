@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title></title>
+    <style>
+    .has-noerror {
+        border: 2px solid green;
+    }
+    .has-error {
+        border: 2px solid red;
+    }
+
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="AppCtrl">
+    <form action="" name="userForm">
+        <input type="text" name="name" ng-model="user.name" required ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }"/>
+        <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Your name is required.</p>
+        
+        <input type="email" name="email" ng-model="user.email"/>
+        <button ng-submit="submit()">Submit</button>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <script>
+      
+
+        var app = angular.module('myApp', []);
+        app.controller('AppCtrl', function($scope){
+            $scope.submit = function(){
+                console.log($scope.user)
+            }
+        })
+    </script>    
+</body>
+</html>
