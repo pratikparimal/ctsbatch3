@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>More</title>
+    <style>
+        .even {
+            background-color: gray
+        }
+        .odd {
+            background-color: blue
+        }
+    </style>
+</head>
+<!-- ng-app
+ng-controller
+ng-repeat
+ng-if
+ng-show/ng-hide
+ng-class -->
+<body ng-app="myApp" ng-controller="AppCtrl">
+    <div ng-if="hide">
+        <p>Some content inside</p>
+    </div>
+    <div>
+        <ol>
+            <li ng-class="$even?'even':'odd'" ng-repeat="element in arr">{{element}} - {{$index}} {{'EVEN:'}} {{$even}}</li>
+        </ol>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('AppCtrl', function($scope){
+            $scope.show = true;
+            $scope.arr = [1,2,3,4,5]
+        })
+    </script>
+</body>
+</html>

@@ -125,5 +125,8 @@
             Providers, also gives a single object, but it is configurable at module configuration level. You can change it one time.
         - Form validations
         - AnglarJS leftover (adv directive)
+            Transclude: including the content inside
+            Already built in directives
+            
         - Java based developement (Spring & Hibernate)   
         

@@ -10,8 +10,8 @@
 <body ng-app="myApp">
         
     <div ng-controller="AppCtrl">
-            <gl-panel text="Panel1"></gl-panel>
-            <gl-panel text="Panel2"></gl-panel>
+            <gl-panel text="Panel1">Some xyz content</gl-panel>
+            <gl-panel text="Panel2">some abc content</gl-panel>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
     <script>
@@ -21,11 +21,12 @@
         })
         app.directive('glPanel', function(){
             return {
-                template: '<div>{{title}}</div>',
+                template: '<div><p>{{title}}</p><span ng-transclude></span></div>',
                 replace: true,
                 scope: {
                     title: '@text'
                 },
+                transclude: true,
                 link: function(scope,element,attrs){
                     // scope.title = attrs.text;
                     console.log(scope);
