@@ -45,6 +45,9 @@ app.post('/feedback', function(req, res){
         if(result =="success"){
             res.json({"success":true});
         }
+        else{
+            res.json({"success":false});
+        }
     })
     
     //consume json and insert into db

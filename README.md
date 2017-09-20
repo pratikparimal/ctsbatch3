@@ -127,6 +127,15 @@
         - AnglarJS leftover (adv directive)
             Transclude: including the content inside
             Already built in directives
-            
+
+    Day 10
+        - Practice day
+
+    Day 11
+        - MEAN stack
+        - Mongoose ODM - Object to document mapping
+        - Angular 2
+
+    Day 12        
         - Java based developement (Spring & Hibernate)   
         
