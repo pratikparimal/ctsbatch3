@@ -137,5 +137,18 @@
         - Angular 2
 
     Day 12        
-        - Java based developement (Spring & Hibernate)   
+        - Java based developement (Spring & Hibernate) 
+        - Simple Java programs
+        - Junit test cases - Test driven development
+        - JDBC programs
+        - Hibernate program for DB operation
+            Step
+                a. Entity (Java class that can mapped to columns in a table)
+                b. Entity to Table mapping - Employee.hbm.xml
+                c. DB configuration - hibernate.cfg.xml
+                d. Get the libraries for hiberate 4.2.21
+                e. EmployeeRepo- reponsible for all DB operation for employee entity
+                f. SessionFactory, Session, session methods(save/get)
+                
+
         
