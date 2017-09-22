@@ -151,4 +151,13 @@
                 f. SessionFactory, Session, session methods(save/get)
                 
 
-        
+    Day 13
+        - Maven
+            Dependency Management Tool
+            Scaffoliding tool -> Initial structures
+            Build tool - JAR, WAR, EAR    
+        - Setup Maven
+            Eclipse plugin
+            Modify settings.xml to setup proxy details
+            Delete the jars directory from repository folder Users->YourUser->.m2
+            https://mvnrepository.com
