@@ -20,7 +20,7 @@ public class EmployeeRepo {
 	
 //	1. Session factory
 //	SessionFactory  sesssionFactory = new Configuration().configure().buildSessionFactory();
-	EntityManagerFactory emf = null; 
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("myjpa"); 
 
 
 	public void insertEmp(Employee emp) {
@@ -31,6 +31,7 @@ public class EmployeeRepo {
 		
 //		Transaction tx = session.beginTransaction();
 		EntityTransaction tx = em.getTransaction();
+		tx.begin();
 //		3. save method to insert a record
 //			session.save(emp);
 			em.persist(emp);
@@ -40,9 +41,10 @@ public class EmployeeRepo {
 
 
 	public Employee fetchEmp(int id) {
-		emf = Persistence.createEntityManagerFactory("myjpa");
+		
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
+		tx.begin();
 //		3. save method to insert a record
 			Employee emp = em.find(Employee.class, id);
 		tx.commit();
