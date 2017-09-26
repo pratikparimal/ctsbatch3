@@ -36,6 +36,9 @@ public class EmployeeRepo {
 		tx.begin();
 //		3. save method to insert a record
 //			session.save(emp);
+//			if(emp.getSalary()<0){
+//				tx.rollback();
+//			}
 			em.persist(emp);
 		tx.commit();
 		em.close();

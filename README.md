@@ -167,6 +167,7 @@
         JPA Basics
         Entities, EntityManager, EntityManagerFactory
         CRUD method (persist, find, remove)
+        Queries with Parameters
 
     Day 15
         JPA Mappings
@@ -174,6 +175,31 @@
             OneToMany
             Lazy fetching of composed entities
             Two way bindings
+
+        JPA leftovers
+            EntityManagerFactory: this is per database
+            EntityManager: represents a physical connection to db
+            Transction: begin, commit, rollback
+            Merge: Attaches a detached object back into managed state
+            NamedQueries: Give a logical name to your query and then you can reuse the query.
+            @Id: Primary Key - Combination of some fields (bankid, companyid)
+                - Compound Key by using @Embeddable and using @Id for UserDefined class
+            Criteria Queries: Dynamic queries
+                Examples: 
+                    Search App (product id, product desc, product name, product category)
+                    Stocks: Monthly/Weekly table, SEP_Stocks, OCT_Stocks
+            Preference  
+                - CRUD (persist, find, remove, merge)
+                - NamedQueries ('selectfromEmpGrSal')
+                - CriteriaQueries: Very specific and meant for dynamic queries
+                - NativeQueries: SQL in DB specific format
+            Inheritance JPA
+                Object world vs Relational DB
+                    strategies:
+                    one single table
+                    table per class
+                    joined table
+            First level cache vs second level cache
         
 
     Day 16
