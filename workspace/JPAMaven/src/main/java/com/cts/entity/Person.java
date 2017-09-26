@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,8 +24,11 @@ public class Person {
 //	@OneToOne(cascade=CascadeType.ALL)
 //	Address residentialAddress = new Address();
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(cascade=CascadeType.ALL ,fetch=FetchType.EAGER)
 	List<Address> addresses = new ArrayList<>();
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="person")
+	List<Bookmark> bookmarks = new ArrayList<>();
 	
 	public Person(String name) {
 		this.name = name;
@@ -33,6 +37,12 @@ public class Person {
 		
 	}
 	
+	public List<Bookmark> getBookmarks() {
+		return bookmarks;
+	}
+	public void setBookmarks(List<Bookmark> bookmarks) {
+		this.bookmarks = bookmarks;
+	}
 	public List<Address> getAddresses() {
 		return addresses;
 	}
@@ -59,8 +69,9 @@ public class Person {
 	}
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", addresses=" + addresses + "]";
+		return "Person [id=" + id + ", name=" + name + ", addresses=" + addresses + ", bookmarks=" + bookmarks + "]";
 	}
+	
 	
 	
 	

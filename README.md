@@ -161,3 +161,19 @@
             Modify settings.xml to setup proxy details
             Delete the jars directory from repository folder Users->YourUser->.m2
             https://mvnrepository.com
+
+
+    Day 14
+        JPA Basics
+        Entities, EntityManager, EntityManagerFactory
+        CRUD method (persist, find, remove)
+
+    Day 15
+        JPA Mappings
+            OneToOne
+            OneToMany
+            Lazy fetching of composed entities
+            Two way bindings
+        
+
+    Day 16

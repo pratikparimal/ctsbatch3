@@ -28,10 +28,15 @@ public class PersonRepo {
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		Person p = em.find(Person.class, id);
-		System.out.println(p);
+//		System.out.println(p.getAddresses());
 		transaction.commit();
 		em.close();
+		
+		
+		
 		return p;
+		
+		
 		
 	}
 

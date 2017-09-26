@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.cts.entity.Address;
+import com.cts.entity.Bookmark;
 import com.cts.entity.Person;
 import com.cts.repo.PersonRepo;
 
@@ -22,25 +23,34 @@ public class TestPerson {
 		
 	}
 
-//	@Test
+	@Test
 	public void test() {
 		
-		Person p = new Person("Ravi");
+		Person p = new Person("Arun");
 		
-		Address primaryAddress = new Address("GK", "Delhi");
-		Address secondryAddress = new Address("Aundh", "Pune");
+		Address primaryAddress = new Address("Jangpura", "Delhi");
+		Address secondryAddress = new Address("Hinjawadi", "Pune");
 		
 		List<Address> addresses = new ArrayList<>();
 		addresses.add(primaryAddress);
 		addresses.add(secondryAddress);
 		
+		Bookmark bookmark1 = new Bookmark("google", "google.com");
+		bookmark1.setPerson(p);
+		Bookmark bookmark2 = new Bookmark("facebook", "facebook.com");
+		bookmark2.setPerson(p);
+		List<Bookmark> bookmarks = new ArrayList<>();
+		bookmarks.add(bookmark1);
+		bookmarks.add(bookmark2);
+		
+		p.setBookmarks(bookmarks);
 		p.setAddresses(addresses);
 		
 		repo.addPerson(p);
 		
 	}
 	
-	@Test
+//	@Test
 	public void testFindPerson() {
 		
 		Person p = repo.findPerson(1);
