@@ -20,7 +20,7 @@ public class TestEmployee {
 	
 //	@Test
 	public void testEmployeeInsert(){
-		Employee emp = new Employee("CTS3533", "Ravi", "Pune", 34233);
+		Employee emp = new Employee("CTS3533", "Ravi", "Delhi", 34233);
 		repo.insertEmp(emp);
 		assertTrue(true);
 	}

@@ -20,27 +20,27 @@ public class TestEmployee {
 		repo = new EmployeeRepo();
 	}
 	
-	@Test
+//	@Test
 	public void testEmployeeFetch(){
 		List<Employee> employees = repo.fetchEmployees();
 		System.out.println(employees);
 		assertEquals(3, employees.size());
 	}
 	
-	@Test
+//	@Test
 	public void testEmployeeFetchLessThan50kSalary(){
 		List<Employee> employees = repo.fetchEmployeesBySalaryLessThan(50000);
 		System.out.println(employees);
 		assertEquals(2, employees.size());
 	}
 	
-//	@Test
+	@Test
 	public void testEmployeeInsert(){
 		Employee emp = new Employee("CTS35335", "Janvi", "Delhi", 51000);
 		repo.insertEmp(emp);
 		assertTrue(true);
 	}
-	@Test
+//	@Test
 	public void testFindEmployee(){
 		Employee emp = repo.fetchEmp(2);
 		assertEquals(emp.getName(), "Arun");
