@@ -6,14 +6,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cts.TestEmployeeIncrement;
 import com.cts.entity.Employee;
 
 @Repository
 public class EmployeeRepo {
 	
+	
+	Logger logger = Logger.getLogger(TestEmployeeIncrement.class);
 	@PersistenceContext
 	EntityManager em;
 	
@@ -34,6 +38,7 @@ public class EmployeeRepo {
 	
 	public Employee findEmployee(int id) {
 		Employee emp = em.find(Employee.class, id);
+		logger.debug(emp);
 		return emp;
 	}
 

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.SynchronousQueue;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ import com.cts.service.EmployeeService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:beans.xml")
 public class TestEmployeeIncrement {
+	
+	Logger logger = Logger.getLogger(TestEmployeeIncrement.class);
 	
 	@Autowired
 	EmployeeService service;
@@ -53,9 +56,15 @@ public class TestEmployeeIncrement {
 	
 //	@Test
 	public void findEmployeeById(){
-		Employee employee = service.findEmployee(2);
+		Employee employee = null;
+		try {
+			employee = service.findEmployee(-2);
+			assertEquals(employee.getName(), "Arun");
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
 		
-		assertEquals(employee.getName(), "Arun");
+		
 	}
 	
 	@Test
