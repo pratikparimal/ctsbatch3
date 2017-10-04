@@ -11,6 +11,10 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
 	
 	Logger logger = Logger.getLogger(getClass());
+	//@AfterReturning- Successful return
+	//@AfterThrowing - Exception
+	//@After			- Success or Exception	
+	//@Around			- Pre and postprocessing
 
 	@Before("execution(* com.cts.service.*.*(..))")
 	public void logInputParameters(JoinPoint jp){
