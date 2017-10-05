@@ -20,6 +20,7 @@ public class LoggingAspect {
 	public void logInputParameters(JoinPoint jp){
 //		jp.getTarget()
 //		logger.error(jp.getTarget());
+
 		logger.error(jp.getSignature());
 		for(Object obj: jp.getArgs()){
 			logger.error("Parameter: " + obj);
