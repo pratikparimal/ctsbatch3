@@ -1,5 +1,6 @@
 package com.cts.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -8,9 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-public class Increment {
+@XmlRootElement
+public class Increment implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

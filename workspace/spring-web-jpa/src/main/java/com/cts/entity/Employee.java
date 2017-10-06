@@ -1,5 +1,6 @@
 package com.cts.entity;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,10 +11,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlInlineBinaryData;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @NamedQuery(name="findAllEmployees", query="from Employee e")
-public class Employee {
+@XmlRootElement
+public class Employee implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -72,8 +76,15 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", increments=" + increments + "]";
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
 	}
+	
+	
+
+//	@Override
+//	public String toString() {
+//		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", increments=" + increments + "]";
+//	}
 
 	
 
