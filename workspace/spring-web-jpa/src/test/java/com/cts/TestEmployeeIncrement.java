@@ -21,7 +21,7 @@ import com.cts.service.EmployeeService;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:bean.xml")
+@ContextConfiguration("classpath:beans.xml")
 public class TestEmployeeIncrement {
 	
 	Logger logger = Logger.getLogger(TestEmployeeIncrement.class);
@@ -47,11 +47,11 @@ public class TestEmployeeIncrement {
 		
 	}
 	
-//	@Test
+	@Test
 	public void findEmployee(){
 		List<Employee> employees = service.findEmployees();
-//		System.out.println(employees);
-		assertEquals(employees.size(), 2);
+		System.out.println(employees);
+//		assertEquals(employees.size(), 2);
 	}
 	
 //	@Test
@@ -67,7 +67,7 @@ public class TestEmployeeIncrement {
 		
 	}
 	
-	@Test
+//	@Test
 	public void testAddIncrementToExistingEmployee(){
 		Increment increment = new Increment(new Date(), 3000);
 		Employee employee = service.applyIncrement(2, increment);

@@ -201,7 +201,27 @@
                     joined table
             First level cache vs second level cache
         
-
+ 
     Day 16
         Spring 
+            Depedency Injection
+            XML, Annotations
+    Day 17
+        Spring-Test
+            @RunsWith - directly load AC
+    Day 18
+        Spring-JPA
+            Dependency Inject Entity Manager using @PersistenceContext
+    Day 19
+        Implicit requirements
+            Application Logging using Log4j
+        Spring-AOP
+            pre & post processing
+            logging method parameters as pre-processing
+    Day 20
+        Servlets: Server side Java programs -- HTML with Java
+        JSP: Server side template : Java within HTML - Nodejs compare to Jade, EJS
+        Spring-Web
+            Controllers in our application
+        
         
