@@ -57,12 +57,15 @@ public class EmployeeService {
 //		logger.debug("Id is :" + id);
 //		logger.debug("Increment is :" + newIncrement);
 		Employee emp = repo.findEmployee(id);
+		logger.warn(emp);
+		logger.warn(emp.getIncrements());
 		newIncrement.setEmployee(emp);
 		
 		emp.setSalary(emp.getSalary()+newIncrement.getAmount());
 		
 		Set<Increment> increments = emp.getIncrements();
 		increments.add(newIncrement);
+		emp.setIncrements(increments);
 		
 		return emp;
 	}

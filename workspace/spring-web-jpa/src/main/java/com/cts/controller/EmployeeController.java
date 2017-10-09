@@ -3,6 +3,7 @@ package com.cts.controller;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,8 @@ import com.cts.service.EmployeeService;
 @Controller
 public class EmployeeController {
 	
+	Logger logger = Logger.getLogger(getClass());
+	
 	@Autowired
 	EmployeeService service;
 	
@@ -33,8 +36,13 @@ public class EmployeeController {
 	
 	
 	@RequestMapping(value="/increment", method=RequestMethod.GET)
-	public String getIncrement(Model model){
-		model.addAttribute("increment", new Increment());
+	public String getIncrement(Model model, @RequestParam("id") int id){
+		Increment increment = new Increment();
+		Employee emp = new Employee();
+		emp.setId(id);
+		increment.setEmployee(emp);
+		
+		model.addAttribute("increment", increment);
 		return "increment";
 	}
 	
@@ -44,9 +52,13 @@ public class EmployeeController {
 		BindingResult result, 
 		Model model) {
 		
-		System.out.println(increment);
+		int id = increment.getEmployee().getId();
+		increment.setEmployee(null);
+		
+		logger.warn(increment);
+		logger.warn(increment.getEmployee());
 		increment.setIncrementDate(new Date());
-		Employee employee = service.applyIncrement(2, increment);
+		Employee employee = service.applyIncrement(id, increment);
 		model.addAttribute("emp", employee);
 		
 		return "employee";

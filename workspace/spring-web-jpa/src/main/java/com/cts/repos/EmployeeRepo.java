@@ -39,7 +39,7 @@ public class EmployeeRepo {
 	
 	public Employee findEmployee(int id) {
 		Employee emp = em.find(Employee.class, id);
-		logger.debug(emp);
+		logger.warn(emp);
 		return emp;
 	}
 

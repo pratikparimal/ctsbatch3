@@ -16,7 +16,11 @@
          <tr>    
           <td>Amount : </td>   
           <td><form:input path="amount"  /></td>  
-         </tr>    
+         </tr> 
+         <tr>    
+          <td>Employee Id : </td>   
+          <td><form:input path="employee.id" /></td>  
+         </tr>      
          <tr>    
           <td colspan="2"><input type="submit" value="Save" /></td>    
          </tr>    
