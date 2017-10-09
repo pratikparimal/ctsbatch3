@@ -16,13 +16,10 @@
          <tr>    
           <td>Amount : </td>   
           <td><form:input path="amount"  /></td>  
-         </tr> 
-         <tr>    
-          <td>Employee Id : </td>   
-          <td><form:input path="employee.id" /></td>  
+           <td><form:input path="employee.id" hidden="true" /></td>  
          </tr>      
          <tr>    
-          <td colspan="2"><input type="submit" value="Save" /></td>    
+          <td colspan="2"><input type="submit" value="Apply Increment" /></td>    
          </tr>    
         </table>    
        </form:form>

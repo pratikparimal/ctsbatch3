@@ -9,6 +9,9 @@
 </head>
 <body>
 	<h2>Employees Page</h2>
+	<h2><a href="increment?empid=1">Apply for Incremnt for Employee 1</a></h2>
+	<h2><a href="increment?empid=2">Apply for Incremnt for Employee 1</a></h2>
+	<h2><a href="#">View Increments for Employee 1</a></h2>
 	<h3>${emps}</h3>
 </body>
 </html>

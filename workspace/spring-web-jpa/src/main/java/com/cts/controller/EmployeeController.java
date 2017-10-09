@@ -36,10 +36,10 @@ public class EmployeeController {
 	
 	
 	@RequestMapping(value="/increment", method=RequestMethod.GET)
-	public String getIncrement(Model model, @RequestParam("id") int id){
+	public String getIncrement(Model model, @RequestParam("empid") int empid){
 		Increment increment = new Increment();
 		Employee emp = new Employee();
-		emp.setId(id);
+		emp.setId(empid);
 		increment.setEmployee(emp);
 		
 		model.addAttribute("increment", increment);
@@ -53,7 +53,7 @@ public class EmployeeController {
 		Model model) {
 		
 		int id = increment.getEmployee().getId();
-		increment.setEmployee(null);
+//		increment.setEmployee(null);
 		
 		logger.warn(increment);
 		logger.warn(increment.getEmployee());

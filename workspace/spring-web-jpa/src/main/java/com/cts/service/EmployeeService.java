@@ -55,17 +55,18 @@ public class EmployeeService {
 	@Transactional
 	public Employee applyIncrement(int id, Increment newIncrement) {
 //		logger.debug("Id is :" + id);
-//		logger.debug("Increment is :" + newIncrement);
+		logger.warn("Increment is :" + newIncrement);
 		Employee emp = repo.findEmployee(id);
-		logger.warn(emp);
-		logger.warn(emp.getIncrements());
-		newIncrement.setEmployee(emp);
+//		logger.warn(emp);
+//		logger.warn(emp.getIncrements());
+		
 		
 		emp.setSalary(emp.getSalary()+newIncrement.getAmount());
-		
+		newIncrement.setEmployee(emp);
 		Set<Increment> increments = emp.getIncrements();
+		logger.warn(increments);
 		increments.add(newIncrement);
-		emp.setIncrements(increments);
+//		emp.setIncrements(increments);
 		
 		return emp;
 	}
