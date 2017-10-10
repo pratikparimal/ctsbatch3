@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cts.exception.UserNotFoundException;
+
 
 @XmlRootElement
 class User implements Serializable{
@@ -60,10 +62,14 @@ public class UserController {
 		return users;
 	}
 
-	@RequestMapping(value="/user/:name", method=RequestMethod.GET )
+	@RequestMapping(value="/user/{name}", method=RequestMethod.GET )
 	public User getUser(@PathVariable ("name") String name){
 //		User user = new User("Ravi");
 		User user = usersMap.get(name);
+		if(user==null){
+			throw new UserNotFoundException("Not able to find "+name);
+		}
+		
 		System.out.println(user);
 		return user;
 	}

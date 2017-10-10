@@ -69,6 +69,7 @@ public class Increment implements Serializable{
 		this.amount = amount;
 	}
 
+	//Break the cyclic dependency
 	@JsonIgnore
 	public Employee getEmployee() {
 		return employee;

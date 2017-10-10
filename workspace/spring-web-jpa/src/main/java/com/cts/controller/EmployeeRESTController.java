@@ -4,9 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cts.entity.Employee;
@@ -28,6 +28,21 @@ public class EmployeeRESTController {
 		System.out.println(employees);
 		
 		return employees;
+	}
+	@RequestMapping(value="/employee/{empid}",method=RequestMethod.GET)
+	public Employee fetchEmployee(@PathVariable("empid") int empid){
+		System.out.println("rest url hit");
+		
+		Employee employee = null;
+		try {
+			employee = service.findEmployee(empid);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+					
+		}
+		System.out.println(employee);
+		
+		return employee;
 	}
 	
 	@RequestMapping(value="/increment",method=RequestMethod.GET)
