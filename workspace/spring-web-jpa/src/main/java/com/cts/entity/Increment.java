@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @XmlRootElement
 public class Increment implements Serializable{
@@ -67,7 +69,7 @@ public class Increment implements Serializable{
 		this.amount = amount;
 	}
 
-
+	@JsonIgnore
 	public Employee getEmployee() {
 		return employee;
 	}

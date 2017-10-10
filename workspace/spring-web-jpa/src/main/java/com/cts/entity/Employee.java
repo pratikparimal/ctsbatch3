@@ -1,7 +1,6 @@
 package com.cts.entity;
 
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -11,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.xml.bind.annotation.XmlInlineBinaryData;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -41,7 +39,7 @@ public class Employee implements Serializable {
 	}
 
 	
-	
+//	@JsonIgnore
 	public Set<Increment> getIncrements() {
 		return increments;
 	}

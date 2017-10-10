@@ -31,8 +31,6 @@ public class EmployeeRepo {
 		Query query = em.createNamedQuery("findAllEmployees");
 		List<Employee> employees = query.getResultList();
 		System.out.println(employees);
-		
-		
 		return employees;
 	}
 	
