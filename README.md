@@ -223,5 +223,30 @@
         JSP: Server side template : Java within HTML - Nodejs compare to Jade, EJS
         Spring-Web
             Controllers in our application
-        
+            Model
+            View
+    Day 21
+        Spring-REST
+            @RequestMapping
+            @ResponseBody, @RequestBody
+            @ResposeStatus(HttpStatus.CREATED/NOT_FOUND/...)
+            @PathVariables (user/12) vs @RequestParams (user?name=Ravi&age=34)
+            Exception Scenarios
+            @JsonIgnore
+            Employee -> Increment -> Employee -> Increment
+        AngularJS as a consumer of JSON content from Spring-REST
+    Day 22
+        ALP
+            Logging (log4j)
+            Maven Build - Test case automation
+            Validation: Client side and server side validations
+            Spring AOP
+            Static Code Analysis   
+    Up Next:
+        Similar project, convert into MEAN stack
+        Cloud
+        Microservices
+        Spring Boot
+        Angular 4 / React 
+    
         
