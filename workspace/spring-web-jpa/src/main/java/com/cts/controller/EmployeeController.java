@@ -1,7 +1,14 @@
 package com.cts.controller;
 
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+
+import javax.transaction.RollbackException;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,9 +55,13 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/increment", method = RequestMethod.POST)
 	public String applyIncrement(
-		@ModelAttribute("increment")Increment increment,
+		@ModelAttribute("increment") @Valid Increment increment,
 		BindingResult result, 
 		Model model) {
+		
+//		if(increment.getAmount()<1){
+//			result.reject("amount", null, "Amount should be greater than 1");
+//		}
 		
 		int id = increment.getEmployee().getId();
 //		increment.setEmployee(null);
@@ -58,7 +69,28 @@ public class EmployeeController {
 		logger.warn(increment);
 		logger.warn(increment.getEmployee());
 		increment.setIncrementDate(new Date());
-		Employee employee = service.applyIncrement(id, increment);
+		Employee employee = null;
+		try{
+			employee = service.applyIncrement(id, increment);
+		}
+		catch(Exception e){
+			logger.error("---------");
+			logger.error(e.getCause().getCause().getMessage());
+			logger.error(e.getMessage());
+			e.printStackTrace();
+			ConstraintViolationException exception = (ConstraintViolationException) e.getCause().getCause();
+			Set<ConstraintViolation<?>> constraintViolations = exception.getConstraintViolations();
+			Iterator<ConstraintViolation<?>> iterator = constraintViolations.iterator();
+			while(iterator.hasNext()){
+				ConstraintViolation<?> next = iterator.next();
+				System.out.println("Validation message: "+next.getMessage());
+				System.out.println("Invalid field: "+next.getPropertyPath());
+				System.out.println("Validation class/bean: "+next.getRootBean());
+				result.reject(next.getPropertyPath().toString(), null, next.getMessage());
+			}
+			return "increment";	
+		}
+		
 		model.addAttribute("emp", employee);
 		
 		return "employee";
