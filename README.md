@@ -238,9 +238,16 @@
     Day 22
         ALP
             Logging (log4j)
-            Maven Build - Test case automation
             Validation: Client side and server side validations
+            Transactions
+            CMT: @Transactional
+            Propogation level: tweek to create new transactions, possibilities to manipulate
+            Transaction rollback happens when you throw a RuntimeException or any subclass of it(Unchecked Exception)
+            Transaction rollback will not happen when you throw a Exception or any subclass of it(Checked Exception)
+
             Spring AOP
+            Internationalization -- Locale specific messages
+            Maven Build - Test case automation
             Static Code Analysis   
     Up Next:
         Similar project, convert into MEAN stack

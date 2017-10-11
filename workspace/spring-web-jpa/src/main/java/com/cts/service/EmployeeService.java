@@ -1,5 +1,6 @@
 package com.cts.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -10,7 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cts.entity.Employee;
 import com.cts.entity.Increment;
+import com.cts.entity.IncrementRequest;
 import com.cts.repos.EmployeeRepo;
+import com.cts.repos.LogRepo;
 
 @Service
 public class EmployeeService {
@@ -19,6 +22,9 @@ public class EmployeeService {
 	
 	@Autowired
 	EmployeeRepo repo;
+	
+	@Autowired
+	LogRepo logRepo;
 
 	//Business Logic
 	public void addEmployee(Employee employee) {
@@ -55,10 +61,17 @@ public class EmployeeService {
 	@Transactional
 	public Employee applyIncrement(int id, Increment newIncrement) {
 //		logger.debug("Id is :" + id);
+		
+		
+		
+		
 		logger.warn("Increment is :" + newIncrement);
 		Employee emp = repo.findEmployee(id);
 //		logger.warn(emp);
 //		logger.warn(emp.getIncrements());
+		
+		IncrementRequest incrementRequest = new IncrementRequest(emp.getName(), new Date(), newIncrement.getAmount());
+		logRepo.logIncrementRequest(incrementRequest);
 		
 		
 		emp.setSalary(emp.getSalary()+newIncrement.getAmount());
@@ -67,6 +80,11 @@ public class EmployeeService {
 		logger.warn(increments);
 		increments.add(newIncrement);
 //		emp.setIncrements(increments);
+		
+		if(newIncrement.getAmount()==10){
+			throw new RuntimeException();
+		}
+		
 		
 		return emp;
 	}
