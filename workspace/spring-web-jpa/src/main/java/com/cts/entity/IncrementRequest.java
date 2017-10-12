@@ -43,6 +43,9 @@ public class IncrementRequest {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
+	public IncrementRequest(){
+		
+	}
 	public IncrementRequest(String employeeName, Date date, double amount) {
 		super();
 		this.employeeName = employeeName;

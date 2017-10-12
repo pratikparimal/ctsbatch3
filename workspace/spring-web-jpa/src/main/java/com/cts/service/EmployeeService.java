@@ -62,14 +62,14 @@ public class EmployeeService {
 	public Employee applyIncrement(int id, Increment newIncrement) {
 //		logger.debug("Id is :" + id);
 		
-		
-		
-		
 		logger.warn("Increment is :" + newIncrement);
+		
+		//Ideally should mock emp object
 		Employee emp = repo.findEmployee(id);
 //		logger.warn(emp);
 //		logger.warn(emp.getIncrements());
 		
+		//Mocks, JMock, Mockito
 		IncrementRequest incrementRequest = new IncrementRequest(emp.getName(), new Date(), newIncrement.getAmount());
 		logRepo.logIncrementRequest(incrementRequest);
 		

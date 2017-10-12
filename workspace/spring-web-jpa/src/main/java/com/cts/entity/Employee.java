@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@NamedQuery(name="findAllEmployees", query="from Employee e")
+@NamedQuery(name="findAllEmployees", query="select e from Employee e")
 @XmlRootElement
 public class Employee implements Serializable {
 	
