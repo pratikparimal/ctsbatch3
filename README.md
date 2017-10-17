@@ -250,7 +250,7 @@
             Spring AOP   
             Static Code Analysis   
     Up Next:
-        Similar project, convert into MEAN stack
+        Exact project, convert into MEAN stack
         Cloud
         Microservices
         Spring Boot
