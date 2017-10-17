@@ -247,8 +247,7 @@
             Internationalization -- Locale specific messages
             Maven Build - Test case automation
 
-            Spring AOP
-            
+            Spring AOP   
             Static Code Analysis   
     Up Next:
         Similar project, convert into MEAN stack

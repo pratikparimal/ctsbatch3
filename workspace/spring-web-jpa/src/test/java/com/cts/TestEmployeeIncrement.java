@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.SynchronousQueue;
+
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -37,7 +37,7 @@ public class TestEmployeeIncrement {
 		Increment increment1 = new Increment(new Date(), 20000);
 		increment1.setEmployee(employee);
 		
-		Set<Increment> increments = new HashSet<>();
+		final Set<Increment> increments = new HashSet<>();
 		increments.add(increment1);
 		
 		employee.setIncrements(increments);
@@ -66,6 +66,7 @@ public class TestEmployeeIncrement {
 		
 		
 	}
+
 	
 	@Test
 	public void testAddIncrementToExistingEmployee(){
