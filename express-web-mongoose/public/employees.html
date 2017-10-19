@@ -12,7 +12,7 @@
 		<input type="text" ng-model="search.name" placeholder="Search by name"/>
 		<table>
 			<tr ng-repeat="employee in employees | filter:search">
-			<td><a href="increment?empid={{employee._id}}">{{employee.name}}</a></td>
+			<td><a href="employee/{{employee._id}}">{{employee.name}}</a></td>
 			<td>{{employee.salary}}</td>
 			</tr>
 		</table>

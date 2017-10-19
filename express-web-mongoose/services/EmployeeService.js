@@ -18,5 +18,13 @@ function findEmployees(callback){
         }
     })
 }
+function findEmployee(empid, callback){
+    employeeRepo.findEmployee(empid, function(err, data){
+        if(err) callback("failure", null);
+        else{
+           callback(null, data)
+        }
+    })
+}
 
-module.exports = {addEmployee, findEmployees}
+module.exports = {addEmployee, findEmployees, findEmployee}

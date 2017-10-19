@@ -20,13 +20,13 @@ module.exports = function(app, logger){
         })
     })
 
-    app.get('/increment', function(req, res){
-        console.log(req.body)
-        var empId = '59e8342fe9e444044a74ae94'
-        employeeService.findEmployee(empid, function(err, data){
+    app.get('/employee/:empid', function(req, res){
+        logger.debug(req.params.empid)
+        var empId = req.params.empid;
+        employeeService.findEmployee(empId, function(err, data){
             if(err) throw err;
-            res.json(data);
-            res.render('increment', {data: data})
+            // res.json(data);
+            res.render('increment', {empid: data._id})
         })
     })
 
