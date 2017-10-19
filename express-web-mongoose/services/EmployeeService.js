@@ -1,6 +1,7 @@
 
 var employeeRepo = require('../repos/EmployeeRepo')
 function addEmployee(employee, callback){
+    
     employeeRepo.addEmployee(employee, function(err, data){
         if(err) callback("failure", null);
         else{
@@ -9,4 +10,13 @@ function addEmployee(employee, callback){
     })
 }
 
-module.exports = {addEmployee:addEmployee}
+function findEmployees(callback){
+    employeeRepo.findEmployees(function(err, data){
+        if(err) callback("failure", null);
+        else{
+           callback(null, data)
+        }
+    })
+}
+
+module.exports = {addEmployee, findEmployees}

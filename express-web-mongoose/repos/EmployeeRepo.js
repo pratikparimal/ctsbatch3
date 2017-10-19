@@ -31,4 +31,17 @@ function addEmployee(employee, callback){
     });
 }
 
-module.exports = {addEmployee:addEmployee}
+function findEmployees(callback){
+    MongoClient.connect(url, function(err, db) {
+        console.log("Connected correctly to server");
+         // Get the documents collection
+         Employee.find({}, function(err, docs){
+            console.log(docs)
+            callback(null, docs)
+         })    
+    });
+}
+
+
+
+module.exports = {addEmployee, findEmployees}
