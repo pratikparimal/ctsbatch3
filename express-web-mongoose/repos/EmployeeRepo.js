@@ -54,7 +54,28 @@ function findEmployee(empId, callback){
 }
 
 
+function applyIncrement(obj, callback){
+    MongoClient.connect(url, function(err, db) {
+        console.log("Connected correctly to server");
+         // Get the documents collection
+
+        findEmployee(obj.empid, function(err, employee){
+            if(err) throw err;
+            employee.salary = parseInt(employee.salary) + parseInt(obj.amount);
+            employee.increments.push({amount: obj.amount});
+            console.log('Updated employee', employee)
+            Employee.findOneAndUpdate({_id:obj.empid}, employee, function(err, data){
+                if(err) throw err;
+                console.log(data);
+                callback(null,data);
+            })
+        }) 
+    });
+}
 
 
 
-module.exports = {addEmployee, findEmployees, findEmployee}
+
+
+
+module.exports = {addEmployee, findEmployees, findEmployee, applyIncrement}

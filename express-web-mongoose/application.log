@@ -340,3 +340,132 @@
 [2017-10-19 12:43:30.715] [DEBUG] file - 59e833c3e9e444044a74ae92
 [2017-10-19 12:44:26.582] [DEBUG] file - 59e833c3e9e444044a74ae92
 [2017-10-19 12:44:39.591] [DEBUG] file - 59e833c3e9e444044a74ae92
+[2017-10-19 14:38:47.055] [DEBUG] file - listening on port: 3000
+[2017-10-19 14:38:47.057] [DEBUG] file - Got cheese.
+[2017-10-19 14:38:47.058] [INFO] file - Cheese is Gouda.
+[2017-10-19 14:38:47.058] [WARN] file - Cheese is quite smelly.
+[2017-10-19 14:38:47.058] [ERROR] file - Cheese is too ripe!
+[2017-10-19 14:38:47.058] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:03:35.050] [DEBUG] file - 59e8342fe9e444044a74ae94
+[2017-10-20 11:06:11.396] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:06:11.398] [DEBUG] file - Got cheese.
+[2017-10-20 11:06:11.399] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:06:11.399] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:06:11.400] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:06:11.401] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:06:18.690] [DEBUG] file - 59e8342fe9e444044a74ae94
+[2017-10-20 11:06:56.127] [DEBUG] file - 59e8342fe9e444044a74ae94
+[2017-10-20 11:07:00.104] [DEBUG] file - { amount: '2345', empid: '59e8342fe9e444044a74ae94' }
+[2017-10-20 11:07:00.107] [DEBUG] file - { amount: '2345', empid: '59e8342fe9e444044a74ae94' }
+[2017-10-20 11:08:36.618] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:08:36.621] [DEBUG] file - Got cheese.
+[2017-10-20 11:08:36.621] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:08:36.621] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:08:36.621] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:08:36.622] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:09:33.251] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:09:33.254] [DEBUG] file - Got cheese.
+[2017-10-20 11:09:33.255] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:09:33.255] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:09:33.255] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:09:33.255] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:09:46.472] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:09:46.476] [DEBUG] file - Got cheese.
+[2017-10-20 11:09:46.476] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:09:46.476] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:09:46.477] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:09:46.477] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:10:23.528] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:10:23.532] [DEBUG] file - Got cheese.
+[2017-10-20 11:10:23.532] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:10:23.532] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:10:23.532] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:10:23.533] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:10:58.815] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:10:58.818] [DEBUG] file - Got cheese.
+[2017-10-20 11:10:58.819] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:10:58.819] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:10:58.819] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:10:58.819] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:16:17.007] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:16:17.016] [DEBUG] file - Got cheese.
+[2017-10-20 11:16:17.016] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:16:17.017] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:16:17.017] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:16:17.017] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:16:26.776] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:16:26.779] [DEBUG] file - Got cheese.
+[2017-10-20 11:16:26.779] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:16:26.779] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:16:26.779] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:16:26.779] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:17:01.916] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:17:01.919] [DEBUG] file - Got cheese.
+[2017-10-20 11:17:01.919] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:17:01.919] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:17:01.919] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:17:01.920] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:18:29.862] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:18:29.866] [DEBUG] file - Got cheese.
+[2017-10-20 11:18:29.866] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:18:29.866] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:18:29.866] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:18:29.867] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:19:27.980] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:19:27.984] [DEBUG] file - Got cheese.
+[2017-10-20 11:19:27.984] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:19:27.984] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:19:27.985] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:19:27.985] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:19:51.821] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:19:51.825] [DEBUG] file - Got cheese.
+[2017-10-20 11:19:51.825] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:19:51.826] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:19:51.826] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:19:51.827] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:20:42.038] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:20:42.043] [DEBUG] file - Got cheese.
+[2017-10-20 11:20:42.043] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:20:42.043] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:20:42.044] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:20:42.044] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:21:11.841] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:21:11.843] [DEBUG] file - Got cheese.
+[2017-10-20 11:21:11.844] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:21:11.844] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:21:11.844] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:21:11.844] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:21:33.248] [DEBUG] file - 59e8313c3cb4a603ccd88794
+[2017-10-20 11:21:37.550] [DEBUG] file - { amount: '20', empid: '59e8313c3cb4a603ccd88794' }
+[2017-10-20 11:21:37.552] [DEBUG] file - { amount: '20', empid: '59e8313c3cb4a603ccd88794' }
+[2017-10-20 11:22:32.118] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:22:32.121] [DEBUG] file - Got cheese.
+[2017-10-20 11:22:32.121] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:22:32.122] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:22:32.122] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:22:32.122] [FATAL] file - Cheese was breeding ground for listeria.
+[2017-10-20 11:22:38.069] [DEBUG] file - 59e8313c3cb4a603ccd88794
+[2017-10-20 11:22:44.030] [DEBUG] file - { amount: '80', empid: '59e8313c3cb4a603ccd88794' }
+[2017-10-20 11:22:44.031] [DEBUG] file - { amount: '80', empid: '59e8313c3cb4a603ccd88794' }
+[2017-10-20 11:22:54.038] [DEBUG] file - 59e833c3e9e444044a74ae92
+[2017-10-20 11:22:57.213] [DEBUG] file - { amount: '21', empid: '59e833c3e9e444044a74ae92' }
+[2017-10-20 11:22:57.217] [DEBUG] file - { amount: '21', empid: '59e833c3e9e444044a74ae92' }
+[2017-10-20 11:25:10.944] [DEBUG] file - 59e59413208882198c3c4114
+[2017-10-20 11:25:27.311] [DEBUG] file - 59e59413208882198c3c4114
+[2017-10-20 11:37:14.631] [DEBUG] file - { name: 'Test23', salary: '23444' }
+[2017-10-20 11:37:26.139] [DEBUG] file - 59e992925c31eb0f1a68b808
+[2017-10-20 11:37:30.478] [DEBUG] file - { amount: '243', empid: '59e992925c31eb0f1a68b808' }
+[2017-10-20 11:37:30.480] [DEBUG] file - { amount: '243', empid: '59e992925c31eb0f1a68b808' }
+[2017-10-20 11:37:42.353] [DEBUG] file - 59e992925c31eb0f1a68b808
+[2017-10-20 11:40:59.162] [DEBUG] file - { name: 'Test24', salary: '2345' }
+[2017-10-20 11:41:53.180] [DEBUG] file - { name: 'Test24', salary: '2345' }
+[2017-10-20 11:42:05.229] [DEBUG] file - { name: 'Test25', salary: '25' }
+[2017-10-20 11:42:14.666] [DEBUG] file - 59e993b55c31eb0f1a68b80c
+[2017-10-20 11:42:19.075] [DEBUG] file - { amount: '25', empid: '59e993b55c31eb0f1a68b80c' }
+[2017-10-20 11:42:19.077] [DEBUG] file - { amount: '25', empid: '59e993b55c31eb0f1a68b80c' }
+[2017-10-20 11:42:58.065] [DEBUG] file - listening on port: 3000
+[2017-10-20 11:42:58.069] [DEBUG] file - Got cheese.
+[2017-10-20 11:42:58.069] [INFO] file - Cheese is Gouda.
+[2017-10-20 11:42:58.069] [WARN] file - Cheese is quite smelly.
+[2017-10-20 11:42:58.070] [ERROR] file - Cheese is too ripe!
+[2017-10-20 11:42:58.070] [FATAL] file - Cheese was breeding ground for listeria.

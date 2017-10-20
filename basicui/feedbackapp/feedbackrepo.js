@@ -25,6 +25,7 @@ function insertFeedback(feedback, callback){
          // Get the documents collection
          console.log('In Repo',feedback);
          var feedbackObj = new FeedBack(feedback);
+        //  Feedback.s
          feedbackObj.save(function(err){
              if(err) callback("failure", null);
              else{

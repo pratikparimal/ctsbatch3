@@ -27,4 +27,14 @@ function findEmployee(empid, callback){
     })
 }
 
-module.exports = {addEmployee, findEmployees, findEmployee}
+function applyIncrement(obj, callback){
+    
+    employeeRepo.applyIncrement(obj, function(err, data){
+        if(err) callback("failure", null);
+        else{
+           callback(null, data)
+        }
+    })
+}
+
+module.exports = {addEmployee, findEmployees, findEmployee, applyIncrement}
