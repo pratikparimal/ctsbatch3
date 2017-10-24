@@ -253,7 +253,8 @@
         Exact project, convert into MEAN stack
         Cloud
         Microservices
+        Angular 4 / React
         Spring Boot
-        Angular 4 / React 
+         
     
         
