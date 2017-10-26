@@ -1,0 +1,48 @@
+It is a Cognizant Cafeteria Ordering System. I would suggest to form a 10 member team (I have mentioned the resource count for each module below as best of my awareness) and execute this project as a full-fledged project team. Identify someone from yourself as a project manager, he is responsible for the overall project, he will track the work on a daily basis.
+ 
+Functional Requirement:
+Vendor detail entry by Cognizant Admin (Manage Vendor module)
+Dynamic page creation for each vendor per entry basis (Menu creation module)
+A vendor can enter their items via vendor page. (Menu creation module)
+Cognizant associate can view items from each vendor (Menu module)
+Cognizant associate can select item and quantity and place their order (Cart module)
+Order placing functionality should freeze at a particular point of time every day 
+Cognizant associate can give their feedback per each item (feedback collection module)
+Truth discovery module for multiple conflicting information provided by associates (Truth discovery module)
+Vendor and Item wise dashboard/report with graphical interpretation (Report - bar, pie chart etc)
+Recommendation engine based on associates past preference and feedback
+Non-Functional requirement
+Authorization and authentication via Active Directory
+System should robust enough to handle 2K concurrent requests during pick hour
+Max page load time 2 sec.
+Where ever possible part of the page (div) should load in a parallel manner via AJAX call.
+Consider multiple locations for a vendor (Hazi Ali can serve in TCPX, UNI-TECH and BANTALA) 
+Can be pluggable with existing ERP system in future
+Where there is a scope of enhancing the algorithm (recommendation engine, truth discovery module) enhance it for every transaction.
+Modules:
+Manage Vendor module - Resource #2
+Menu creation module - Resource # 2
+Online order placing module (Cart) - Resource # 2
+Associate feedback module - Resource # 2
+Food and Quality dashbord - Resource # 1
+Recomendation engine - Resource # 1
+ Role:
+Admin - Access to Vendor management, Food and Quality dashbord
+Vendor - Access to Menu creation module, Food and Quality dashbord
+Associate - Online order placing module, Associate feedback module, Food and Quality dashbord
+System admin – All
+Note: Recommendation engine can push recommendation to Associate and Vendor.
+ 
+Technology:
+Front End – HTML5, Any Javascript framework (JQuery, Angular JS etc)
+Middle tier – Core Java, Spring.
+Back End – Transactional DB: MySQL, NoSQL: MongoDB (to store associate feedback)
+Recommendation engine - R or Python or Matlab or GNU Octave (Octave is the best known alternative to MATLAB)
+Create JSON based RESTful architecture
+Deliverables:
+Business Requirement Specification (BRS)
+Detail Use Case with Usecase diagram
+Wireframe
+Lowlevel design document for each module (LLD)
+Technical writeup along with class and sequence diagram at least.
+Code with unit test case

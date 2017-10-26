@@ -252,8 +252,15 @@
     Up Next:
         Exact project, convert into MEAN stack
         Cloud
-        Microservices
+            - Differences b/w IaaS vs PaaS vs SaaS
+            - OpenShift, Heroku
+            - Azure, AWS
+            - Serverless (Lamda)
         Angular 4 / React
+            - JS as base language: TypeScript, JSX
+            - Performance
+            - DI Improved
+        Microservices
         Spring Boot
          
     
