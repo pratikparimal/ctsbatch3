@@ -4,7 +4,7 @@ import {Component} from '@angular/core'
     selector: 'app-root',
     template: `
         <div>
-            <h3>First Angular Component changed- should!! Now we understand this a little</h3>
+            <h3>First Angular Component changed- should!!</h3>
             <p>{{message}}</p>
             <button (click)="someAction()">Some Action</button>
             <my-badge></my-badge>

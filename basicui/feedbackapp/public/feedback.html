@@ -1,0 +1,42 @@
+<html>
+        <head>
+            <title>Feedback App</title>
+
+            <style>
+            .has-noerror {
+        border: 2px solid green;
+    }
+    .has-error {
+        border: 2px solid red;
+    }
+    .error {
+       color:red;
+    }
+            </style>
+        </head>
+        
+        <body>
+            <h2>Insert Feedback Page</h2>
+            <div ng-app = "feedbackApp" ng-controller="FeedbackCtrl"> 
+                <form action="/insertfeedback" method="POST" name="feedbackForm">
+                        <input type="text" name="email" ng-model="feedback.email"  placeholder="Enter your email" required ng-pattern="emailFormat" ng-class="{ 'has-error' : feedbackForm.email.$invalid && !feedbackForm.email.$pristine }"/>
+                        <strong class="error" ng-show="feedbackForm.email.$invalid && !feedbackForm.email.$pristine" class="help-block">Your email is required.</strong>
+                        <input type="number" name="rating" ng-model="feedback.rating" placeholder="Enter your rating" min="1" max="10" ng-class="{ 'has-error' : feedbackForm.rating.$invalid && !feedbackForm.rating.$pristine }"/>
+                        <input type="text" name="desc" ng-model="feedback.description" placeholder="Enter your comments"/>
+                        <button type="submit" ng-disabled="feedbackForm.$invalid">Submit Feeback</button>
+                </form>
+                
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+            <script>
+                var app = angular.module('feedbackApp', []);
+                app.controller('FeedbackCtrl', function($scope, $http){
+                    $scope.emailFormat = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+                    $scope.submit = function(){
+                        console.log($scope.feedback)
+                    }
+                    
+                })
+            </script>
+        </body>
+        </html>

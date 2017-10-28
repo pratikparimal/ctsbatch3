@@ -1,1 +1,9 @@
 /**/node_modules
+/**/.DS_Store
+/**/.metadata
+/**/.sonarlint
+/**/.recommenders
+/**/Servers
+/**/.settings
+/**/*.class
+/**/RemoteSystemsTempFiles/**

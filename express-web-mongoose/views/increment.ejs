@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Apply Increment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css"/>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        .has-noerror {
+            border: 2px solid green;
+        }
+
+        .has-error {
+            border: 2px solid red;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body ng-app>
+
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active">
+                <a href="/#!/">Show Employees</a>
+            </li>
+            <li role="presentation">
+                <a href="/#!/addEmployee">Add Employee</a>
+            </li>
+
+        </ul>
+
+        <form method="post" action="/increment" name="incrementForm">
+            <table>
+                <tr>
+                    <td>Amount : </td>
+                    <td>
+                        <input type="number" name="amount" ng-model="amount" required="true" ng-class="{ 'has-error' : incrementForm.amount.$invalid && !incrementForm.amount.$pristine }"
+                        />
+                        <strong class="error" ng-show="incrementForm.amount.$invalid && !incrementForm.amount.$pristine" class="help-block">Amount field is required and should be >0</strong>
+                    </td>
+                    <td>
+                        <input type="text" name="empid" value="<%=empid %>" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input ng-disabled="incrementForm.$invalid" type="submit" value="Apply Increment" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+</body>
+
+</html>

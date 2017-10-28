@@ -13,8 +13,8 @@
 </head>
 <body ng-app="myApp" ng-controller="AppCtrl">
     <form action="" name="userForm">
-        <input type="text" name="name" ng-model="user.name" required ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }"/>
-        <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Your name is required.</p>
+        <input type="text" name="name" ng-model="user.name" required  ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }"/>
+        <strong ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Please enter a valid email</strong>
         
         <input type="email" name="email" ng-model="user.email"/>
         <button ng-submit="submit()">Submit</button>
@@ -26,6 +26,7 @@
 
         var app = angular.module('myApp', []);
         app.controller('AppCtrl', function($scope){
+            
             $scope.submit = function(){
                 console.log($scope.user)
             }
